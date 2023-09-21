@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: .\book_store\forms.py:25
 msgid "Book Title"
-msgstr ""
+msgstr "Bog Titel"
 
 #: .\book_store\forms.py:26
 msgid "Loaned From"
-msgstr ""
+msgstr "Lånt Fra"
 
 #: .\book_store\forms.py:27
 msgid "Loaned To"
-msgstr ""
+msgstr "Lånt Til"
 
 #: .\book_store\forms.py:28
 msgid "Returned"
-msgstr ""
+msgstr "Returneret"
 
 #: .\l10n_dateinput_bug\settings.py:84
 msgid "English"
-msgstr ""
+msgstr "Engelsk"
 
 #: .\l10n_dateinput_bug\settings.py:85
 msgid "Danish"
-msgstr ""
+msgstr "Dansk"
 
 #: .\templates\base.html:10
 msgid "Company Name"
-msgstr ""
+msgstr "Firma Navn"
