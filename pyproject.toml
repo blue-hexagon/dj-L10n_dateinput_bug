@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "l10n-dateinput-bug"
+version = "0.1.0"
+description = ""
+authors = ["blue-hexagon <w0j8uhv5csio@opayq.net>"]
+readme = "README.md"
+packages = [{include = "l10n_dateinput_bug"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
