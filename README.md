@@ -3,12 +3,18 @@
 
 This is a minimal example of a previously submitted bug - the original issue can be found here: https://code.djangoproject.com/ticket/34853
 
-In the image below, the language and locale is set to **en-US** but the form fields are localized to **da_DK**. The docs make no mention that this should be the expected behaviour. I have found that output localizations, such as times and dates strings are localized properly as they shoulds.
+In the image below, the language and locale is set to **en-US** but the form fields are localized to **da_DK**. The docs make no mention that this should be the expected behaviour. I also show that output localizations, such as times and dates strings are localized properly as they should (see green text in images).
 
 - da_DK uses a dateformat of dd-MM-yyyy
 - en_US uses a dateformat of mm/dd/yyyy
 
+## en_US
+This is where the bug is visible.
 ![en.PNG](en.PNG)
+
+## da_DK
+This shows up correct, as my browsers locale is the same as the django language.
+![da.PNG](en.PNG)
 
 ## settings.py
 ```python
@@ -45,7 +51,7 @@ class Book(models.Model):
         max_length=60
     )
     borrowed_from_date = models.DateField(
-        default=timezone.now,
+        default=datetime.date.today(),
         blank=False,
         null=False,
     )

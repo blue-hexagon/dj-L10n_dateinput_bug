@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.utils import timezone
 
@@ -9,7 +11,7 @@ class Book(models.Model):
         max_length=60
     )
     borrowed_from_date = models.DateField(
-        default=timezone.now,
+        default=datetime.date.today(),
         blank=False,
         null=False,
     )

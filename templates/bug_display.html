@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load l10n %}
+{% block content %}
+  <div>
+    <hr>
+  </div>
+  <h2>Accept-Language Header</h2>
+  <div>
+    <p style="color: darkorange; font-weight: bold;">Chrome Browser injects it's lists of ranked display languages with priorities. If you
+                              change browsers display language, that will change.</p>
+    <p style="color: darkred; font-weight: bold;text-decoration: underline;">This list of locales takes precedence, when rendering date
+                                                           input form fields.</p>
+    <p style="color: red;">Accept-Language: {{ request.META.HTTP_ACCEPT_LANGUAGE }}</p>
+    <hr>
+  </div>
+  <h2>Django Language Cookie</h2>
+  <div>
+    <p style="color: red;">'django_language' cookie value: {{ request.COOKIES.django_language }}</p>
+    <hr>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16rem; flex-direction: column;">
+    <div>
+      <h2>ModelForm</h2>
+      <p style="font-weight: 700;">form.as_p</p>
+      <div style="outline: red dashed 2px">{{ form.as_p }}</div>
+    </div>
+    <div>
+      <h2>Model Instances</h2>
+      {% for book in all_books %}
+        <div>
+          <div><span style="font-weight: bold;">{% trans 'Title' %}:</span> <span>{{ book.title }}</span></div>
+          <div><span style="font-weight: bold;">{% trans 'Borrowed From' %}:</span> <span style="color:darkgreen;">{{ book.borrowed_from_date }}</span></div>
+          <div><span style="font-weight: bold;">{% trans 'Borrowed To' %}:</span> <span style="color:darkgreen;">{{ book.borrowed_to_date }}</span></div>
+          <div><span style="font-weight: bold;">{% trans 'Returned' %}?</span> {% if book.is_returned %}✔{% else %}🚫{% endif %}</div>
+          <br />
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <hr>
+  </div>
+  <div style="display: flex; flex-direction:column;justify-content: space-between">
+    <h2>Using 'localize' template tag/filter on a field doesn't work either</h2>
+    <div>Using all possible combinations of
+      <a href="https://docs.djangoproject.com/en/4.2/topics/i18n/formatting/#template-tags">
+        template tags
+      </a>
+         and
+      <a href="https://docs.djangoproject.com/en/4.2/topics/i18n/formatting/#template-filters">
+        template filters
+      </a>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column;">
+
+    <span>
+      {{ form.borrowed_to_date }}
+    </span>
+
+    <span>
+      {{ form.borrowed_to_date|localize }}
+    </span>
+
+    <span>
+      {% localize off %}
+        {{ form.borrowed_to_date }}
+      {% endlocalize %}
+    </span>
+
+    <span>
+      {% localize off %}
+        {{ form.borrowed_to_date }}
+      {% endlocalize %}
+    </span>
+
+    <span>
+      {% localize on %}
+        {{ form.borrowed_to_date }}
+      {% endlocalize %}
+    </span>
+
+  </div>
+{% endblock %}

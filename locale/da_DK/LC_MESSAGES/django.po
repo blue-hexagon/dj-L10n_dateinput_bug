@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-21 16:51+0200\n"
+"POT-Creation-Date: 2023-09-21 19:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: .\book_store\forms.py:25
 msgid "Book Title"
 msgstr "Bog Titel"
@@ -29,7 +30,7 @@ msgstr "Lånt Fra"
 msgid "Loaned To"
 msgstr "Lånt Til"
 
-#: .\book_store\forms.py:28
+#: .\book_store\forms.py:28 .\templates\bug_display.html:35
 msgid "Returned"
 msgstr "Returneret"
 
@@ -44,3 +45,15 @@ msgstr "Dansk"
 #: .\templates\base.html:10
 msgid "Company Name"
 msgstr "Firma Navn"
+
+#: .\templates\bug_display.html:32
+msgid "Title"
+msgstr "Titel"
+
+#: .\templates\bug_display.html:33
+msgid "Borrowed From"
+msgstr "Lånt Fra"
+
+#: .\templates\bug_display.html:34
+msgid "Borrowed To"
+msgstr "Lånt Til"

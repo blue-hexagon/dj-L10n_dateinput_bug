@@ -12,8 +12,8 @@
 <body>
 <div
     style="display: flex; flex-direction: column; justify-content: space-between; justify-items: center; margin-inline: 16rem;">
-  <h1>L10n Bug - Accept-Language Header takes precedence over language set with cookie when rendering input fields</h1>
-
+  <h1>Date Input Fields Does Not Localize</h1>
+  <h2>L10n Bug - Accept-Language Header takes precedence over language set with cookie when rendering input fields</h2>
   <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input name="next" type="hidden" value="{{ redirect_to }}">
     <select name="language">
