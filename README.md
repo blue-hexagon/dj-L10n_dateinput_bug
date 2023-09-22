@@ -14,7 +14,7 @@ This is where the bug is visible.
 
 ## da_DK
 This shows up correct, as my browsers locale is the same as the django language.
-![da.PNG](en.PNG)
+![da.PNG](da.PNG)
 
 ## settings.py
 ```python
