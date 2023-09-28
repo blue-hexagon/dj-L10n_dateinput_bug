@@ -51,7 +51,7 @@ class Book(models.Model):
         max_length=60
     )
     borrowed_from_date = models.DateField(
-        default=datetime.date.today(),
+        default=timezone.now,
         blank=False,
         null=False,
     )
